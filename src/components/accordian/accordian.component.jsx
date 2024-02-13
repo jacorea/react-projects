@@ -43,11 +43,10 @@ const Accordian = () => {
                                             {dataItem.answer}
                                         </div>
                                     )
-
                                 : selected === dataItem.id ? 
-                                <div className="acc-content ">
-                                    {dataItem.answer}
-                                </div>
+                                    <div className="acc-content ">
+                                        {dataItem.answer}
+                                    </div>
                                 : null
                             }
                         </div>
