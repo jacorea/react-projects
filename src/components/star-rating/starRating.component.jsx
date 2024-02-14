@@ -24,21 +24,26 @@ const handleOnMouseLeave = (getCurrentId) => {
 console.log('after rating: ',rating)
 
     return (
-        <div>
-            {
-                [...Array(numOfStars)].map((_,index)=> {
-                    index++
-                    return <FaStar
-                                key={index}
-                                className={index <= (hover || rating) ? 'active':'inactive'}
-                                onClick={()=>handleOnClick(index)}
-                                onMouseEnter={()=>handleOnMouseEnter(index)}
-                                onMouseLeave={()=>handleOnMouseLeave(index)}
-                                size={40}
-                                 />
-                })
-            }
-        </div>
+        <>
+            <div>
+                {
+                    [...Array(numOfStars)].map((_,index)=> {
+                        index++
+                        return <FaStar
+                                    key={index}
+                                    className={index <= (hover || rating) ? 'active':'inactive'}
+                                    onClick={()=>handleOnClick(index)}
+                                    onMouseEnter={()=>handleOnMouseEnter(index)}
+                                    onMouseLeave={()=>handleOnMouseLeave(index)}
+                                    size={40}
+                                    />
+                    })
+                }
+            </div>
+            <div>
+                you are selecting {rating} out of {numOfStars}.
+            </div>
+        </>
     )
 }
 
